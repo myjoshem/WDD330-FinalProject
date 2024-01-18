@@ -32,5 +32,15 @@
     "last 3 opera versions",
     "last 3 ios_saf versions",
     "last 3 safari versions"
-  ]
+  ],
+  "comments": {
+    "commentses": "adding comments for fun",
+    "dependencies": "we use jQuery because of reasons",
+    "repository": "our beloved repo",
+    "license": "we love MIT, so why not",
+    "devDependencies": {
+      "@babel/core": "it's @ version 7.2.2 because of...",
+      "gulp-rename": "why not"
+    }
+  }
 }
