@@ -13,6 +13,17 @@ export function getData(category = "tents") {
 }
 
 export async function findProductById(id) {
-  const products = await getData();
-  return products.find((item) => item.Id === id);
+  try {
+    const products = await getData();
+    const product = products.find((item) => item.Id === id);
+
+    if (!product) {
+      throw new Error(`Product with ID ${id} not found.`);
+    }
+
+    return product;
+  } catch (error) {
+    console.error("Error in findProductById:", error);
+    throw error; // Re-throw the error to maintain consistent error handling
+  }
 }
