@@ -26,6 +26,14 @@ async function addToCartHandler(e) {
   } catch (error) {
     console.error("Error in addToCartHandler:", error);
   }
+  let cartIcon = document.querySelector(".cart");
+  cartIcon.classList.remove("shake");
+  void cartIcon.offsetWidth;
+  cartIcon.classList.add("shake");
+  console.log("this is working");
+  setTimeout(() => {
+    cartIcon.classList.remove("shake");
+  }, 2000);
 }
 
 // add listener to Add to Cart button. When the button is clicked, it will call the 'addToCartHandler' function (notice: this is one line of code, broken into three lines for readability)

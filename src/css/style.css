@@ -7,29 +7,33 @@
   --tertiary-color: #a4b8c4;
   --light-grey: #d0d0d0;
   --dark-grey: #303030;
-
   /* sizes */
   --font-base: 18px;
   --small-font: 0.8em;
   --large-font: 1.2em;
 }
+
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--font-base);
   color: var(--dark-grey);
 }
+
 img {
   max-width: 100%;
 }
+
 header {
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
 }
+
 .logo {
   line-height: 60px;
   width: 245px;
@@ -39,28 +43,32 @@ header {
   text-align: right;
   font-family: var(--font-headline);
 }
+
 .logo img {
   width: 60px;
   height: 60px;
 }
+
 .logo a {
   text-decoration: none;
   color: var(--font-body);
 }
+
 .hero {
   position: relative;
 }
+
 .hero .logo {
   position: absolute;
   left: calc(50% - 60px);
   bottom: -10px;
   background-color: white;
 }
+
 .logo--square {
   font-size: var(--small-font);
   width: 110px;
   height: 80px;
-
   flex-direction: column;
   align-items: flex-end;
   box-shadow: 1px 1px 4px var(--light-grey);
@@ -68,15 +76,19 @@ header {
   align-items: center;
   line-height: 1;
 }
+
 .logo--square img {
   width: 90px;
   height: 90px;
   margin-top: -1.3em;
 }
+
 .logo--square > div {
   margin-top: -1.7em;
 }
+
 /* utility classes */
+
 .highlight {
   color: var(--tertiary-color);
 }
@@ -91,12 +103,15 @@ button {
   font-size: var(--large-font);
   cursor: pointer;
 }
+
 .divider {
   border-bottom: 2px solid var(--primary-color);
 }
+
 /* End utility classes */
 
 /* Cart icon styles */
+
 .cart {
   padding-top: 1em;
   position: relative;
@@ -106,6 +121,7 @@ button {
 .cart svg {
   width: 25px;
 }
+
 .cart:hover svg {
   fill: gray;
 }
@@ -119,9 +135,11 @@ button {
   max-width: 600px;
   margin: auto;
 }
+
 .products {
   padding: 0.5em;
 }
+
 .product-list {
   display: flex;
   flex-flow: row wrap;
@@ -129,11 +147,14 @@ button {
   list-style-type: none;
   padding: 0;
 }
+
 .product-list a {
   text-decoration: none;
   color: var(--dark-grey);
 }
+
 /* Styles for product lists */
+
 .product-card {
   flex: 1 1 45%;
   margin: 0.25em;
@@ -141,6 +162,7 @@ button {
   border: 1px solid var(--light-grey);
   max-width: 250px;
 }
+
 .product-card h2,
 .product-card h3,
 .product-card p {
@@ -154,6 +176,7 @@ button {
 .card__name {
   font-size: 1em;
 }
+
 /* End product list card */
 
 .product-detail {
@@ -167,6 +190,7 @@ button {
 }
 
 /* Start cart list card styles */
+
 .cart-card {
   display: grid;
   grid-template-columns: 25% auto 15%;
@@ -179,9 +203,11 @@ button {
   grid-row: 1/3;
   grid-column: 1;
 }
+
 .cart-card p {
   margin-top: 0;
 }
+
 .cart-card .card__name {
   grid-row: 1;
   grid-column: 2;
@@ -220,3 +246,105 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+/* Cart Icon Animation START*/
+
+.shake {
+  animation:
+    shakeAnimation 1s ease-in-out,
+    growAnimation 1s ease-in-out,
+    colorAnimation 1s ease-in-out;
+}
+
+@keyframes shakeAnimation {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(15deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(-15deg) scale(0.8);
+  }
+  75% {
+    transform: rotate(15deg) scale(0.8);
+  }
+  90% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* @keyframes growAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+} */
+
+@keyframes colorAnimation {
+  0% {
+    background: radial-gradient(
+      circle,
+      rgba(139, 0, 0, 1) 0%,
+      /* Darker red at the center */ rgba(255, 0, 0, 1) 10%,
+      /* Solid red transitioning */ rgba(255, 0, 0, 0) 70%
+        /* Fully transparent towards the edges */
+    );
+    border-radius: 50%;
+  }
+  100% {
+    background: radial-gradient(
+      circle,
+      rgba(139, 0, 0, 1) 0%,
+      /* Darker red at the center */ rgba(255, 0, 0, 0) 50%,
+      /* Transparent transition */
+    );
+    border-radius: 50%;
+  }
+}
+
+/* Add a pseudo-element for the background circle */
+
+.cart {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cart::after {
+  content: "";
+  position: relative;
+  background-size: cover;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  /* Adjust the size of the circle as needed */
+  height: 50px;
+  /* Adjust the size of the circle as needed */
+  background-color: transparent;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: circleAnimation 0.5s ease-in-out forwards;
+  z-index: -1;
+}
+
+@keyframes circleAnimation {
+  0% {
+    width: 50px;
+    height: 50px;
+  }
+  100% {
+    width: 100px;
+    /* Adjust the size of the circle as needed */
+    height: 100px;
+    /* Adjust the size of the circle as needed */
+  }
+}
+
+/* Cart Icon Animation END */
