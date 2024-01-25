@@ -16,7 +16,6 @@ export async function findProductById(id) {
   try {
     const products = await getData();
     const product = products.find((item) => item.Id === id);
-
     if (!product) {
       throw new Error(`Product with ID ${id} not found.`);
     }

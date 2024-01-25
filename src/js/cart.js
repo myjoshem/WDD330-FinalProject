@@ -36,4 +36,3 @@ function cartItemTemplate(item) {
 }
 //this displays the items to the cart/index.html in html format
 renderCartContents();
-
