@@ -1,4 +1,5 @@
 import { resolve } from "path";
+// eslint-disable-next-line import/namespace
 import { defineConfig } from "vite";
 
 export default defineConfig({
@@ -14,5 +15,10 @@ export default defineConfig({
         product: resolve(__dirname, "src/product_pages/index.html"),
       },
     },
+  },
+  // Add the following line to use ESM (ECMAScript Module) build
+  esbuild: {
+    jsxFactory: "h",
+    jsxFragment: "Fragment",
   },
 });

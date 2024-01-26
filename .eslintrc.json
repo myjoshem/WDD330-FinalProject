@@ -24,7 +24,14 @@
         "props": false
       }
     ],
-    "no-console": 1,
+    "no-console": "off",
+    "no-restricted-syntax": [
+      "error",
+      {
+          "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
+          "message": "Unexpected property on console object was called"
+      }
+  ],
     "quotes": ["error", "double", { "allowTemplateLiterals": true }],
     "func-names": 0,
     "space-unary-ops": 2,
@@ -40,7 +47,7 @@
       2,
       {
         "hoist": "all",
-        "allow": ["resolve", "reject", "done", "next", "err", "error"]
+        "allow": ["resolve", "reject", "done", "next", "err", "error", "product"]
       }
     ],
     "no-unused-expressions": "off"
