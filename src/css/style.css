@@ -7,6 +7,7 @@
   --tertiary-color: #a4b8c4;
   --light-grey: #d0d0d0;
   --dark-grey: #303030;
+  --final-price-color: #ff0000;
   /* sizes */
   --font-base: 18px;
   --small-font: 0.8em;
@@ -175,6 +176,14 @@ button {
 
 .card__name {
   font-size: 1em;
+}
+
+.product-card__price {
+  color: var(--final-price-color);
+}
+
+.product-card__suggested__price {
+  text-decoration: line-through;
 }
 
 /* End product list card */
