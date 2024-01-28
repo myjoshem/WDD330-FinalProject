@@ -1,5 +1,6 @@
 import { getLocalStorage } from "./utils.mjs";
 
+/* In summary, this function renderCartContents retrieves cart data from local storage, checks its validity, and then dynamically generates HTML to display the cart contents on a webpage. It adapts its behavior based on whether there's only one item in the cart or multiple items. */
 function renderCartContents() {
   const cartItem = getLocalStorage("so-cart");
 
