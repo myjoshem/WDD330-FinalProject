@@ -29,9 +29,9 @@ ie. setClick('.button', () => {
   console.log('Button clicked!');
 });*/
 export function setClick(selector, callback) {
-  qs(selector).addEventListener("touchend", (event) => {
+  document.addEventListener("touchend", (event) => {
     event.preventDefault();//prevents defaults like scrolling, etc. on device
     callback();// then calls the passed in function
   });
-  qs(selector).addEventListener("click", callback);
+  document.addEventListener("click", callback);
 }
