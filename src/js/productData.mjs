@@ -1,3 +1,5 @@
+//this file basically returns the 'object' for a specific product Id
+
 /* This function takes a response object (res) as input.
 It checks if the response is "ok" (i.e., the status code is in the range 200-299). If so, it returns the JSON representation of the response body using the res.json() method.
 If the response is not "ok", it throws an Error with the message "Bad Response". */
