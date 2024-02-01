@@ -261,7 +261,6 @@ footer {
 .shake {
   animation:
     shakeAnimation 1s ease-in-out,
-    growAnimation 1s ease-in-out,
     colorAnimation 1s ease-in-out;
 }
 
@@ -285,15 +284,6 @@ footer {
     transform: rotate(0deg) scale(1);
   }
 }
-
-/* @keyframes growAnimation {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.5);
-  }
-} */
 
 @keyframes colorAnimation {
   0% {
@@ -333,9 +323,7 @@ footer {
   top: 50%;
   left: 50%;
   width: 50px;
-  /* Adjust the size of the circle as needed */
   height: 50px;
-  /* Adjust the size of the circle as needed */
   background-color: transparent;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -350,17 +338,45 @@ footer {
   }
   100% {
     width: 100px;
-    /* Adjust the size of the circle as needed */
     height: 100px;
-    /* Adjust the size of the circle as needed */
   }
 }
 
 /* Cart Icon Animation END */
 
+/* Superscript CSS START*/
+
+.superscript {
+  color: var(--primary-color);
+  background-color: var(--dark-grey);
+  position: absolute;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  padding-top: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  right: 2px;
+  top: 3px;
+}
+
+.large-cart {
+  width: 28px;
+  height: 28px;
+  right: 0px;
+  top: 1px;
+  padding-top: 1px;
+  font-size: var(--small-font);
+}
+
+/* SUPERSCRIPT CSS END */
+
 /* For cart buttons*/
 
 /* .product styles */
+
 .product {
   border: 1px solid #ccc;
   padding: 10px;
@@ -368,12 +384,14 @@ footer {
 }
 
 /* .quantity-controls styles */
+
 .quantity-controls {
   display: flex;
   align-items: center;
 }
 
 /* .button styles for cart quantities */
+
 button__quantity {
   padding: 5px 10px;
   background-color: #007bff;
@@ -383,6 +401,7 @@ button__quantity {
 }
 
 /* .quantity styles */
+
 .quantity {
   margin: 0 10px;
   font-size: 16px;
@@ -391,26 +410,36 @@ button__quantity {
 /* New CSS for increment and decrement buttons */
 
 /* .increment and .decrement button styles */
+
 .increment,
 .decrement {
   padding: 5px 10px;
-  background-color: #007bff; /* Same as existing button background color */
-  color: #fff; /* Same as existing button text color */
-  border: none; /* Same as existing button border */
-  cursor: pointer; /* Same as existing button cursor */
-  margin-left: 5px; /* Adjust margin as needed */
+  background-color: #007bff;
+  /* Same as existing button background color */
+  color: #fff;
+  /* Same as existing button text color */
+  border: none;
+  /* Same as existing button border */
+  cursor: pointer;
+  /* Same as existing button cursor */
+  margin-left: 5px;
+  /* Adjust margin as needed */
 }
 
 .increment:hover,
 .decrement:hover {
-  background-color: #0056b3; /* Darken the background color on hover */
+  background-color: #0056b3;
+  /* Darken the background color on hover */
 }
 
 /* .increment and .decrement button styles on small screens */
+
 @media screen and (max-width: 500px) {
   .increment,
   .decrement {
-    padding: 3px 8px; /* Adjust padding for smaller screens */
-    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 3px 8px;
+    /* Adjust padding for smaller screens */
+    font-size: 14px;
+    /* Adjust font size for smaller screens */
   }
 }

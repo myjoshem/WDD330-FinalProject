@@ -22,6 +22,7 @@ export async function getData(category = "tents") {
 export async function findProductById(id, category = "tents") {
   try {
     const products = await getData(category);
+    console.log(products);
     const product = products.find((item) => item.Id === id);
     if (!product) {
       throw new Error(`Product with ID ${id} not found.`);

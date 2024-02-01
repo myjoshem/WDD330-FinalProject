@@ -21,7 +21,7 @@ function removeExtraProducts(jsonData) {
 // productList.mjs
 function productCardTemplate(item) {
   return `<li class="product-card">
-    <a href="product_pages/index.html?product=">
+    <a href="product_pages/index.html?product=${item.Id}">
     <img src="${item.Image}" alt="${item.Name}" />
     </a>
     <h3 class="card__brand">${item.Brand.Name} ${item.NameWithoutBrand}</h3>
