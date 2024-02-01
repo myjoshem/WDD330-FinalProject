@@ -17,10 +17,10 @@ export function setLocalStorage(key, data) {
 export function getParam(product) {
   /* First line retrieves the entire query string portion of the URL using window.location.search. The query string is everything in the URL after the ? character. */
   const queryString = window.location.search;
-/*   We then create a new URLSearchParams object called urlParams using the query string obtained in the previous step. Usage: Once you have a URLSearchParams object, you can use its methods to work with query parameters. These methods include append(), delete(), get(), getAll(), has(), set(), and more. */
-const urlParams = new URLSearchParams(queryString);
-// Return the value obtained from the URL parameter
-return urlParams.get(product); 
+  /*   We then create a new URLSearchParams object called urlParams using the query string obtained in the previous step. Usage: Once you have a URLSearchParams object, you can use its methods to work with query parameters. These methods include append(), delete(), get(), getAll(), has(), set(), and more. */
+  const urlParams = new URLSearchParams(queryString);
+  // Return the value obtained from the URL parameter
+  return urlParams.get(product);
 }
 
 // set a listener for both touchend and click
@@ -30,8 +30,8 @@ ie. setClick('.button', () => {
 });*/
 export function setClick(selector, callback) {
   document.addEventListener("touchend", (event) => {
-    event.preventDefault();//prevents defaults like scrolling, etc. on device
-    callback();// then calls the passed in function
+    event.preventDefault(); //prevents defaults like scrolling, etc. on device
+    callback(); // then calls the passed in function
   });
   document.addEventListener("click", callback);
 }
