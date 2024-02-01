@@ -41,11 +41,14 @@ export function renderListWithTemplate(
   parentHtmlElement,
   itemList,
   position = "afterbegin",
-  clear = true
+  clear = true,
 ) {
+  // If clear is true empty parent element
   if (clear) {
     parentHtmlElement.innerHTML = "";
   }
+  // Run templateFunction on each list item
   const htmlString = itemList.map(templateFunction);
+  // Send the HTML string to the document.
   parentHtmlElement.insertAdjacentHTML(position, htmlString.join(""));
 }
