@@ -1,5 +1,6 @@
 import { getData } from "./productData.mjs";
-import {qs} from "./utils.mjs";
+import {qs,renderListWithTemplate} from "./utils.mjs";
+
 export default async function productList(selector, category) {
 
     // get the element we will insert the list into from the selector
@@ -7,9 +8,7 @@ export default async function productList(selector, category) {
     // get the list of products
     const productDataJson = await getData(category);
     // render out the product list to the element
-    
-    const htmlItems = productDataJson.map((item) => productCardTemplate(item));
-    document.querySelector(".product-list").innerHTML = htmlItems.join("");
+    renderListWithTemplate(productCardTemplate, el, products);
           }
          
 
