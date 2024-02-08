@@ -3,6 +3,13 @@ import { qs, getLocalStorage, renderListWithTemplate } from "./utils.mjs";
 export default function shoppingCart() {
   const cartItem = getLocalStorage("so-cart");
   const element = qs(".product-list");
+
+  // Check if cart is empty
+  if (cartItem == null) {
+    console.log("cart is empty");
+    element.innerHTML = "Cart is empty"
+    return;
+  }
   // Check if cartItem is an object
   if (!cartItem || typeof cartItem !== "object") {
     console.error("Invalid cart item:", cartItem);
