@@ -10,37 +10,44 @@ shoppingCart();
 // for incrementing or decrementing quantities already in the cart
 // Function to handle incrementing the quantity
 function incrementQuantity(id) {
-  /* 
-                      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-                      const itemIndex = cartItems.findIndex((item) => item.id === id);
-                      if (itemIndex !== -1) {
-                        cartItems[itemIndex].quantity++;
-                        localStorage.setItem("cart", JSON.stringify(cartItems));
-                      } */
+
+  console.log(id);
+  const cartItems = JSON.parse(localStorage.getItem("so-cart")) || [];
+  console.log(cartItems[0]);
+  const itemIndex = cartItems.findIndex((item) => item.Id === id);
+  console.log(itemIndex);
+  if (itemIndex !== -1) {
+    cartItems[itemIndex].quantity++;
+    localStorage.setItem("so-cart", JSON.stringify(cartItems));
+  }
+
 }
 
 // Function to handle decrementing the quantity
 function decrementQuantity(id) {
-  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-  const itemIndex = cartItems.findIndex((item) => item.id === id);
+  const cartItems = JSON.parse(localStorage.getItem("so-cart")) || [];
+  const itemIndex = cartItems.findIndex((item) => item.Id === id);
   if (itemIndex !== -1 && cartItems[itemIndex].quantity > 1) {
     cartItems[itemIndex].quantity--;
-    localStorage.setItem("cart", JSON.stringify(cartItems));
+    localStorage.setItem("so-cart", JSON.stringify(cartItems));
   }
 }
 
 // Event delegation to handle click events for increment and decrement buttons
-// setClick("click", (e) => {
-//   const target = e.target;
-//   if (target.classList.contains("increment")) {
-//     const id = target.dataset.id;
-//     incrementQuantity(id);
-//     // Update UI or perform any other actions after incrementing
-//     renderCartContents();
-//   } else if (target.classList.contains("decrement")) {
-//     const id = target.dataset.id;
-//     decrementQuantity(id);
-//     // Update UI or perform any other actions after decrementing
-//     renderCartContents();
-//   }
-// });
+
+setClick("click", (e) => {
+  const target = e.target;
+  if (target.classList.contains("increment")) {
+    const id = target.dataset.id;
+    incrementQuantity(id);
+    console.log("increment");
+    // Update UI or perform any other actions after incrementing
+    renderCartContents();
+  } else if (target.classList.contains("decrement")) {
+    const id = target.dataset.id;
+    decrementQuantity(id);
+    // Update UI or perform any other actions after decrementing
+    renderCartContents();
+  }
+});
+
