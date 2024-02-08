@@ -1,3 +1,4 @@
+import { setCartSuperscriptHTML } from "./productDetails.mjs";
 // wrapper for querySelector...returns matching element
 export function qs(selector, parent = document) {
   return parent.querySelector(selector);
@@ -45,10 +46,54 @@ export function renderListWithTemplate(
 ) {
   // If clear is true empty parent element
   if (clear) {
-    parentHtmlElement.innerHTML = "";
+    console.log(parentHtmlElement);
+    parentHtmlElement.innerHTML = "<div></div>";
   }
+
   // Run templateFunction on each list item
   const htmlString = itemList.map(templateFunction);
   // Send the HTML string to the document.
   parentHtmlElement.insertAdjacentHTML(position, htmlString.join(""));
+}
+
+//Week 4 Team assignment
+export async function renderWithTemplate(
+  templateFunction,
+  parentHtmlElement,
+  data,
+  callback,
+  position = "afterbegin",
+  clear = true,
+) {
+  // If clear is true empty parent element
+  if (clear) {
+    parentHtmlElement.innerHTML = "";
+  }
+  // Send the HTML string to the document.
+  // Run templateFunction on item
+  const htmlString = await templateFunction(data);
+
+  parentHtmlElement.insertAdjacentHTML(position, htmlString);
+  if (callback) {
+    callback(data);
+  }
+}
+
+function loadTemplate(path) {
+  // this is called currying and can be very helpful.
+  return async function () {
+    const res = await fetch(path);
+    if (res.ok) {
+      const html = await res.text();
+      return html;
+    }
+  };
+}
+
+export async function loadHeaderFooter() {
+  const headerTemplateFn = loadTemplate("/partials/header.html");
+  const footerTemplateFn = loadTemplate("/partials/footer.html");
+
+  renderWithTemplate(headerTemplateFn, qs("#header__primary"));
+  renderWithTemplate(footerTemplateFn, qs("#footer__primary"));
 }
