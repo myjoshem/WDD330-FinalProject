@@ -48,22 +48,24 @@ renderCartContents();
 // for incrementing or decrementing quantities already in the cart
 // Function to handle incrementing the quantity
 function incrementQuantity(id) {
+  console.log(id);
   const cartItems = JSON.parse(localStorage.getItem("so-cart")) || [];
-  const itemIndex = cartItems.findIndex((item) => item.id === id);
+  console.log(cartItems[0]);
+  const itemIndex = cartItems.findIndex((item) => item.Id === id);
   console.log(itemIndex);
   if (itemIndex !== -1) {
     cartItems[itemIndex].quantity++;
-    localStorage.setItem("cart", JSON.stringify(cartItems));
+    localStorage.setItem("so-cart", JSON.stringify(cartItems));
   }
 }
 
 // Function to handle decrementing the quantity
 function decrementQuantity(id) {
   const cartItems = JSON.parse(localStorage.getItem("so-cart")) || [];
-  const itemIndex = cartItems.findIndex((item) => item.id === id);
+  const itemIndex = cartItems.findIndex((item) => item.Id === id);
   if (itemIndex !== -1 && cartItems[itemIndex].quantity > 1) {
     cartItems[itemIndex].quantity--;
-    localStorage.setItem("cart", JSON.stringify(cartItems));
+    localStorage.setItem("so-cart", JSON.stringify(cartItems));
   }
 }
 
