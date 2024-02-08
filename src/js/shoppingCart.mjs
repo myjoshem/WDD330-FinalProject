@@ -1,8 +1,8 @@
-import { getLocalStorage, renderListWithTemplate } from "./utils.mjs";
+import { qs, getLocalStorage, renderListWithTemplate } from "./utils.mjs";
 
 export default function shoppingCart() {
   const cartItem = getLocalStorage("so-cart");
-  const element = qs(".product-list").innerHTML;
+  const element = qs(".product-list");
   // Check if cartItem is an object
   if (!cartItem || typeof cartItem !== "object") {
     console.error("Invalid cart item:", cartItem);

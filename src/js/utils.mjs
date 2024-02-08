@@ -46,8 +46,10 @@ export function renderListWithTemplate(
 ) {
   // If clear is true empty parent element
   if (clear) {
-    parentHtmlElement.innerHTML = "";
+    console.log(parentHtmlElement);
+    parentHtmlElement.innerHTML = "<div></div>";
   }
+
   // Run templateFunction on each list item
   const htmlString = itemList.map(templateFunction);
   // Send the HTML string to the document.
