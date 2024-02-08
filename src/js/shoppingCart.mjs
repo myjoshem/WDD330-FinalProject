@@ -17,8 +17,18 @@ export default function shoppingCart() {
     const htmlItem = cartItemTemplate(cartItem);
     qs(".product-list").innerHTML = htmlItem;
   }
+  cartTotal()
 }
 
+function cartTotal() {
+  const cartItem = getLocalStorage("so-cart");
+  const totalElement = qs(".cart-footer");
+  if (cartItem.length != 0 || cartItem == null){
+    totalElement.classList.add("total-hidden")
+  }
+  else {totalElement.classList.remove("total-hidden")}
+  
+}
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
       <a href="#" class="cart-card__image">
