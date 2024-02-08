@@ -33,8 +33,6 @@ function addProductToCart(product) {
 
 function adjustCartSuperscript() {
   // Add 1 to the cart-quantity local storage item
-
-  console.log("in adjust cart super");
   // Get any number in cart-quantity if none then set to 0
   let cartQuantity = getLocalStorage("cart-quantity") || 0;
   console.log(cartQuantity);
@@ -51,6 +49,8 @@ function adjustCartSuperscript() {
 export function setCartSuperscriptHTML() {
   //changes the html of the cart superscript div to match the cart-quantity local storage
   let cartQuantity = getLocalStorage("cart-quantity") || 0;
+  var superscript = qs(".superscript");
+  console.log(qs(".superscript"));
   if (cartQuantity > 100) {
     qs(".superscript").classList.add("large-cart");
   } else {
