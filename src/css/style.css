@@ -443,3 +443,7 @@ button__quantity {
     /* Adjust font size for smaller screens */
   }
 }
+/* hiding total in cart */
+.total-hidden{
+  display: none;
+}
