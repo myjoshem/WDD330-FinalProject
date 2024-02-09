@@ -30,11 +30,13 @@ export default function shoppingCart() {
 function cartTotal() {
   const cartItem = getLocalStorage("so-cart");
   const totalElement = qs(".cart-footer");
-  if (cartItem.length != 0 || cartItem == null){
+  if (cartItem == null || cartItem.length == 0) {
     totalElement.classList.add("total-hidden")
   }
-  else {totalElement.classList.remove("total-hidden")}
-  
+  else {
+    totalElement.classList.remove("total-hidden")
+    
+  }
 }
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
