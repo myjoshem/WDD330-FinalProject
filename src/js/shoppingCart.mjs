@@ -3,7 +3,7 @@ import { qs, getLocalStorage, renderListWithTemplate } from "./utils.mjs";
 export default function shoppingCart() {
   const cartItem = getLocalStorage("so-cart");
   const element = qs(".product-list");
-
+  cartTotal()
   // Check if cart is empty
   if (cartItem == null) {
     console.log("cart is empty");
@@ -24,7 +24,7 @@ export default function shoppingCart() {
     const htmlItem = cartItemTemplate(cartItem);
     qs(".product-list").innerHTML = htmlItem;
   }
-  cartTotal()
+  
 }
 
 function cartTotal() {
