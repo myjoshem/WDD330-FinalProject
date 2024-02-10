@@ -4,9 +4,26 @@ import { findProductById } from "./productData.mjs";
 let product;
 
 export default async function productDetails(productId) {
-  product = await findProductById(productId);
-  renderProductDetails();
-  setClick(qs("#addToCart"), addToCartHandler);
+  try {
+    product = await findProductById(productId);
+  } finally {
+    if (product == undefined) {
+      productNotFound();
+    } else {
+      renderProductDetails();
+      setClick("#addToCart", addToCartHandler);
+    }
+  }
+}
+
+function productNotFound() {
+  const cartButton = qs("#addToCart");
+  const h2 = qs(".productNameWithoutBrand");
+  const p = qs(".product__description");
+  cartButton.remove();
+  h2.innerText = "Error: Product Not Found";
+  p.innerText =
+    "We were unable to find this product. Please check the URL or reach out to a customer service representative. Or consider looking at another one of our other fine products.";
 }
 
 //before we add a product to our cart, we must check if there are already items in the cart. If it is empty, it will create a new array. If it has items, it will check to see if they need to increase the quantity of an existing item or 'add' a new item.
