@@ -10,7 +10,6 @@ shoppingCart();
 // for incrementing or decrementing quantities already in the cart
 // Function to handle incrementing the quantity
 function incrementQuantity(id) {
-
   console.log(id);
   const cartItems = JSON.parse(localStorage.getItem("so-cart")) || [];
   console.log(cartItems[0]);
@@ -20,7 +19,6 @@ function incrementQuantity(id) {
     cartItems[itemIndex].quantity++;
     localStorage.setItem("so-cart", JSON.stringify(cartItems));
   }
-
 }
 
 // Function to handle decrementing the quantity
@@ -42,12 +40,11 @@ setClick("click", (e) => {
     incrementQuantity(id);
     console.log("increment");
     // Update UI or perform any other actions after incrementing
-    renderCartContents();
+    shoppingCart();
   } else if (target.classList.contains("decrement")) {
     const id = target.dataset.id;
     decrementQuantity(id);
     // Update UI or perform any other actions after decrementing
-    renderCartContents();
+    shoppingCart();
   }
 });
-
