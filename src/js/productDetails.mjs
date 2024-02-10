@@ -28,10 +28,10 @@ function addProductToCart(product) {
   //after the array is created or updated, we will reset the contents of localstorage to the value of the array
   setLocalStorage("so-cart", cartItems);
 
-  adjustCartSuperscript();
+  adjustAddCartSuperscript();
 }
 
-function adjustCartSuperscript() {
+export function adjustAddCartSuperscript() {
   // Add 1 to the cart-quantity local storage item
   // Get any number in cart-quantity if none then set to 0
   let cartQuantity = getLocalStorage("cart-quantity") || 0;
@@ -46,12 +46,27 @@ function adjustCartSuperscript() {
   setCartSuperscriptHTML();
 }
 
+export function adjustSubtractCartSuperscript() {
+  // Subtract 1 to the cart-quantity local storage item
+  // Get any number in cart-quantity if none then set to 0
+  let cartQuantity = getLocalStorage("cart-quantity") || 0;
+  console.log(cartQuantity);
+  cartQuantity -= 1;
+  console.log(cartQuantity);
+
+  // Set the new number to the cart-quantity field in localstorage
+  setLocalStorage("cart-quantity", cartQuantity);
+
+  // Refresh the superscript number on the page
+  setCartSuperscriptHTML();
+}
+
 export function setCartSuperscriptHTML() {
   //changes the html of the cart superscript div to match the cart-quantity local storage
   let cartQuantity = getLocalStorage("cart-quantity") || 0;
   var superscript = qs(".superscript");
   console.log(qs(".superscript"));
-  if (cartQuantity > 100) {
+  if (cartQuantity >= 100) {
     qs(".superscript").classList.add("large-cart");
   } else {
     qs(".superscript").classList.remove("large-cart");

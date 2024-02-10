@@ -2,11 +2,16 @@
 
 import { getLocalStorage, setClick, qs, loadHeaderFooter } from "./utils.mjs";
 import productDetails from "./productDetails.mjs";
+import {
+  setCartSuperscriptHTML,
+  adjustAddCartSuperscript,
+  adjustSubtractCartSuperscript,
+} from "./productDetails.mjs";
 import shoppingCart from "./shoppingCart.mjs";
 
 loadHeaderFooter();
 shoppingCart();
-
+setTimeout(() => setCartSuperscriptHTML(), 100);
 // for incrementing or decrementing quantities already in the cart
 // Function to handle incrementing the quantity
 function incrementQuantity(id) {
@@ -41,10 +46,14 @@ setClick("click", (e) => {
     console.log("increment");
     // Update UI or perform any other actions after incrementing
     shoppingCart();
+    adjustAddCartSuperscript();
+    // setTimeout(() => setCartSuperscriptHTML(), 100);
   } else if (target.classList.contains("decrement")) {
     const id = target.dataset.id;
     decrementQuantity(id);
     // Update UI or perform any other actions after decrementing
+    adjustSubtractCartSuperscript();
     shoppingCart();
+    // setTimeout(() => setCartSuperscriptHTML(), 100);
   }
 });
