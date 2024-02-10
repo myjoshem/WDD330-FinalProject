@@ -30,11 +30,11 @@ ie. setClick('.button', () => {
   console.log('Button clicked!');
 });*/
 export function setClick(selector, callback) {
-  document.addEventListener("touchend", (event) => {
+  selector.addEventListener("touchend", (event) => {
     event.preventDefault(); //prevents defaults like scrolling, etc. on device
     callback(); // then calls the passed in function
   });
-  document.addEventListener("click", callback);
+  selector.addEventListener("click", callback);
 }
 
 export function renderListWithTemplate(

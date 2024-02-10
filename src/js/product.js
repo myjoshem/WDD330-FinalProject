@@ -6,4 +6,4 @@ import { setCartSuperscriptHTML } from "./productDetails.mjs";
 const productId = getParam("product");
 productDetails(productId);
 loadHeaderFooter();
-setCartSuperscriptHTML();
+setTimeout(() => setCartSuperscriptHTML(), 100);

@@ -6,7 +6,7 @@ let product;
 export default async function productDetails(productId) {
   product = await findProductById(productId);
   renderProductDetails();
-  setClick("#addToCart", addToCartHandler);
+  setClick(qs("#addToCart"), addToCartHandler);
 }
 
 //before we add a product to our cart, we must check if there are already items in the cart. If it is empty, it will create a new array. If it has items, it will check to see if they need to increase the quantity of an existing item or 'add' a new item.
