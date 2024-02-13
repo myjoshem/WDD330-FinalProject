@@ -5,6 +5,7 @@ It checks if the response is "ok" (i.e., the status code is in the range 200-299
 If the response is not "ok", it throws an Error with the message "Bad Response". */
 async function fetchJson(url) {
   const response = await fetch(url);
+  console.log(response);
   if (!response.ok) {
     throw new Error("Bad Response");
   }
