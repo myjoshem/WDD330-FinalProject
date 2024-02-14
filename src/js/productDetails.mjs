@@ -77,7 +77,15 @@ export function adjustSubtractCartSuperscript() {
   // Refresh the superscript number on the page
   setCartSuperscriptHTML();
 }
-
+export function adjustByValueCartSuperScript(amount) {
+  let cartQuantity = getLocalStorage("cart-quantity") || 0;
+  console.log(cartQuantity);
+  cartQuantity += amount;
+  console.log(cartQuantity);
+  // Set the new number to the cart-quantity field in localstorage
+  setLocalStorage("cart-quantity", cartQuantity);
+  setCartSuperscriptHTML();
+}
 export function setCartSuperscriptHTML() {
   //changes the html of the cart superscript div to match the cart-quantity local storage
   let cartQuantity = getLocalStorage("cart-quantity") || 0;
@@ -85,7 +93,10 @@ export function setCartSuperscriptHTML() {
   console.log(qs(".superscript"));
   if (cartQuantity >= 100) {
     qs(".superscript").classList.add("large-cart");
-  } else {
+  } else if (
+    cartQuantity < 100 &&
+    superscript.classList.contains("large-cart")
+  ) {
     qs(".superscript").classList.remove("large-cart");
   }
   qs(".superscript").innerHTML = cartQuantity;

@@ -6,12 +6,14 @@ import {
   setCartSuperscriptHTML,
   adjustAddCartSuperscript,
   adjustSubtractCartSuperscript,
+  adjustByValueCartSuperScript,
 } from "./productDetails.mjs";
 import shoppingCart from "./shoppingCart.mjs";
 
 loadHeaderFooter();
 shoppingCart();
-setUpListeners();
+setUpCartListeners();
+deleteButtonListeners();
 setTimeout(() => setCartSuperscriptHTML(), 100);
 // for incrementing or decrementing quantities already in the cart
 // Function to handle incrementing the quantity
@@ -84,11 +86,11 @@ function decrementQuantity(id) {
 //   // setTimeout(() => setCartSuperscriptHTML(), 100);
 // }
 
-function setUpListeners() {
+function setUpCartListeners() {
   var increments = document.querySelectorAll(".increment");
   increments.forEach(function (increment) {
     increment.addEventListener("touchend", (e) => {
-      event.preventDefault(); //prevents defaults like scrolling, etc. on device
+      e.preventDefault(); //prevents defaults like scrolling, etc. on device
       const target = e.target;
       const id = target.dataset.id;
       incrementQuantity(id);
@@ -96,7 +98,8 @@ function setUpListeners() {
       // Update UI or perform any other actions after incrementing
       shoppingCart();
       adjustAddCartSuperscript();
-      setUpListeners();
+      setUpCartListeners();
+      deleteButtonListeners();
       // setTimeout(() => setCartSuperscriptHTML(), 100);
     });
 
@@ -109,7 +112,8 @@ function setUpListeners() {
       // Update UI or perform any other actions after incrementing
       shoppingCart();
       adjustAddCartSuperscript();
-      setUpListeners();
+      setUpCartListeners();
+      deleteButtonListeners();
       // setTimeout(() => setCartSuperscriptHTML(), 100);
     });
   });
@@ -117,7 +121,7 @@ function setUpListeners() {
   var decrements = document.querySelectorAll(".decrement");
   decrements.forEach(function (decrement) {
     decrement.addEventListener("touchend", (e) => {
-      event.preventDefault(); //prevents defaults like scrolling, etc. on device
+      e.preventDefault(); //prevents defaults like scrolling, etc. on device
       const target = e.target;
       const id = target.dataset.id;
       decrementQuantity(id);
@@ -125,7 +129,8 @@ function setUpListeners() {
       // Update UI or perform any other actions after incrementing
       shoppingCart();
       adjustSubtractCartSuperscript();
-      setUpListeners();
+      setUpCartListeners();
+      deleteButtonListeners();
       // setTimeout(() => setCartSuperscriptHTML(), 100);
     });
 
@@ -133,13 +138,59 @@ function setUpListeners() {
       const target = e.target;
       //prevents defaults like scrolling, etc. on device
       const id = target.dataset.id;
+
       decrementQuantity(id);
       console.log("decrement");
       // Update UI or perform any other actions after incrementing
       shoppingCart();
       adjustSubtractCartSuperscript();
-      setUpListeners();
+      setUpCartListeners();
+      deleteButtonListeners();
       // setTimeout(() => setCartSuperscriptHTML(), 100);
     });
   });
+}
+
+function deleteButtonListeners() {
+  var deleteButtons = document.querySelectorAll(".cart-card__delete__button");
+  deleteButtons.forEach(function (deleter) {
+    deleter.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      const target = e.target;
+      const id = target.dataset.id;
+      deleteProductFromCart(id);
+      console.log("deleted");
+      // Update UI or perform any other actions after incrementing
+      shoppingCart();
+      setUpCartListeners();
+      deleteButtonListeners();
+      // setTimeout(() => setCartSuperscriptHTML(), 100);
+    });
+    deleter.addEventListener("click", (e) => {
+      const target = e.target;
+      const id = target.dataset.id;
+      console.log(target.dataset);
+      deleteProductFromCart(id);
+      console.log("deleted");
+      // Update UI or perform any other actions after incrementing
+      shoppingCart();
+      setUpCartListeners();
+      deleteButtonListeners();
+      // setTimeout(() => setCartSuperscriptHTML(), 100);
+    });
+  });
+}
+
+function deleteProductFromCart(id) {
+  let cartItems = JSON.parse(localStorage.getItem("so-cart")) || [];
+  const itemIndex = cartItems.findIndex((item) => item.Id === id);
+  if (cartItems[itemIndex]) {
+    let quantity = cartItems[itemIndex].quantity * -1;
+    cartItems.splice(itemIndex, 1);
+    adjustByValueCartSuperScript(quantity);
+    if (cartItems[0] == null) {
+      cartItems = [];
+    }
+    localStorage.setItem("so-cart", JSON.stringify(cartItems));
+  }
 }

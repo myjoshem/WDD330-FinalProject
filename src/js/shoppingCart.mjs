@@ -3,11 +3,11 @@ import { qs, getLocalStorage, renderListWithTemplate } from "./utils.mjs";
 export default function shoppingCart() {
   const cartItem = getLocalStorage("so-cart");
   const element = qs(".product-list");
-  cartTotal()
+  cartTotal();
   // Check if cart is empty
   if (cartItem == null) {
     console.log("cart is empty");
-    element.innerHTML = "Cart is empty"
+    element.innerHTML = "Cart is empty";
     return;
   }
   // Check if cartItem is an object
@@ -18,26 +18,25 @@ export default function shoppingCart() {
 
   // Check if cartItem is an array
   if (Array.isArray(cartItem)) {
+    console.log(cartItem);
     renderListWithTemplate(cartItemTemplate, element, cartItem);
   } else {
     // Handle the case when there's only one item (not an array)
     const htmlItem = cartItemTemplate(cartItem);
     qs(".product-list").innerHTML = htmlItem;
   }
-  
 }
 
 function cartTotal() {
   const cartItem = getLocalStorage("so-cart");
   const totalElement = qs(".cart-footer");
   if (cartItem == null || cartItem.length == 0) {
-    totalElement.classList.add("total-hidden")
-  }
-  else {
-    totalElement.classList.remove("total-hidden")
-    
+    totalElement.classList.add("total-hidden");
+  } else {
+    totalElement.classList.remove("total-hidden");
   }
 }
+
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
       <a href="#" class="cart-card__image">
@@ -52,7 +51,8 @@ function cartItemTemplate(item) {
         <span class="cart-card__quantity quantity">${item.quantity}</span>
         <button class="increment button__quantity" data-id="${item.Id}">+</button>
       </div>
-      <p class="cart-card__price">$${item.FinalPrice}</p>
+      <div class="cart-card__price"><p>$${item.FinalPrice}</p><p class="cart-card__delete__button" data-id="${item.Id}">X</p></div>
+      
     </li>`;
   return newItem;
 }
