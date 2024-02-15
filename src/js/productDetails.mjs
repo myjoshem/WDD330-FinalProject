@@ -125,7 +125,7 @@ function renderProductDetails() {
   document.title = `Sleep Outside | ${product.Brand.Name} ${product.NameWithoutBrand}`;
   qs(".productName").innerText = product.Brand.Name;
   qs(".productNameWithoutBrand").innerText = product.NameWithoutBrand;
-  qs(".productImage").src = product.Image;
+  qs(".productImage").src = product.Images.PrimaryLarge;
   qs(".productImage").alt = product.Name;
   qs(".productFinalPrice").innerText = "$" + product.FinalPrice;
   qs(".productSuggestedRetailPrice").innerText =

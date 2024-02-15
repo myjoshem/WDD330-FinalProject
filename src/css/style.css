@@ -460,3 +460,10 @@ button__quantity {
 .total-hidden {
   display: none;
 }
+
+/* Home Page Product Categories */
+
+.categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
