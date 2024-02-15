@@ -35,7 +35,7 @@ export async function getData(category) {
 
 // Finds a product by its ID
 // by putting default category, this allows for overriding when new categories are being used
-export async function findProductById(id, category = "tents") {
+export async function findProductById(id) {
   try {
     // const products = await getData(category);
     // console.log(products);
