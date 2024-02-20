@@ -29,13 +29,29 @@ export default function shoppingCart() {
 
 function cartTotal() {
   const cartItem = getLocalStorage("so-cart");
-  const totalElement = qs(".cart-footer");
-  if (cartItem == null || cartItem.length == 0) {
+  const totalElement = document.querySelector(".cart-total");
+  const totalPrice = document.querySelector(".cart-price");
+
+  if (!cartItem || cartItem.length === 0) {
     totalElement.classList.add("total-hidden");
+    totalPrice.classList.add("total-hidden");
   } else {
     totalElement.classList.remove("total-hidden");
+    totalPrice.classList.remove("total-hidden");
+    let totalItems = 0;
+    let totalCartPrice = 0;
+
+    cartItem.forEach(item => {
+      const itemPrice = item.quantity * item.FinalPrice;
+      totalItems += item.quantity;
+      totalCartPrice += itemPrice;
+    });
+
+    totalElement.textContent = "Quantity: " + totalItems;
+    totalPrice.textContent = "Price: $" + totalCartPrice.toFixed(2); // Display total price with 2 decimal places
   }
 }
+
 
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
