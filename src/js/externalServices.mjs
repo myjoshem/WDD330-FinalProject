@@ -23,7 +23,7 @@ function convertToJson(res) {
 }
 
 // Fetches data for a specified category
-export async function getData(category) {
+export async function getProductsByCategory(category) {
   const response = await fetch(baseURL + `products/search/${category}`);
   const data = await convertToJson(response);
   return data.Result;
@@ -50,4 +50,16 @@ export async function findProductById(id) {
     console.error("Error in findProductById:", error);
     throw error; // Re-throw the error to maintain consistent error handling
   }
+}
+
+// Sends chechout data to server
+export async function checkout(payload) {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  };
+  return await fetch(baseURL + "checkout/", options).then(convertToJson);
 }

@@ -103,6 +103,7 @@ button {
   border: 0;
   font-size: var(--large-font);
   cursor: pointer;
+  border-radius: 8px;
 }
 
 .divider {
@@ -127,6 +128,44 @@ button {
   fill: gray;
 }
 
+.cart-footer{
+  background-color:rgba(128, 128, 128, 0.2);
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.cart-footer * {
+  font-weight: 900;
+  font-size: 125%;
+ 
+}
+
+.checkout-button {
+  background-color: black; /* Gray background */
+    color: white; /* Black text */
+    font-weight: 900;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    text-decoration: none;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow */
+}
+  /*text-decoration: none;
+  text-align: center;
+  background-color: var(--tertiary-color);
+  padding: 10px;
+  border-radius: 5px;
+  color: black;*/
+  
+/* } */
+.checkout-container {
+  margin: auto auto;
+  margin-bottom: 15px;
+  width: 5px;
+}
 /* End cart icon styles */
 
 .mission {
@@ -137,9 +176,6 @@ button {
   margin: auto;
 }
 
-.products {
-  padding: 0.5em;
-}
 
 .product-list {
   display: flex;
@@ -202,7 +238,8 @@ button {
 
 .cart-card {
   display: grid;
-  grid-template-columns: 25% auto 15%;
+  /*grid-template-columns: 25% 60% 15%;*/
+  grid-template-columns: 1fr minmax(500px, 500px) 1fr;
   font-size: var(--small-font);
   /* max-height: 120px; */
   align-items: center;
@@ -467,3 +504,34 @@ button__quantity {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+
+/* CHECKOUT FORM CSS START */
+.checkout-form {
+  padding: 0.5em;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea,
+input[type="submit"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.order-summary {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 20px;
+}
+/* CHECKOUT FORM CSS END */
