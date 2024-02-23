@@ -1,11 +1,11 @@
-import { getData } from "./productData.mjs";
+import { getProductsByCategory } from "./externalServices.mjs";
 import { qs, renderListWithTemplate } from "./utils.mjs";
 
 export default async function productList(selector, category) {
   // get the element we will insert the list into from the selector
   const element = qs(selector);
   // get the list of products
-  const productDataJson = await getData(category);
+  const productDataJson = await getProductsByCategory(category);
   // Filter the list to remove extra JSON items
   const filteredDataJson = productDataJson.filter(removeExtraProducts);
   // render out the product list to the element

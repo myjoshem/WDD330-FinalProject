@@ -31,6 +31,7 @@ function cartTotal() {
   const cartItem = getLocalStorage("so-cart");
   const totalElement = document.querySelector(".cart-total");
   const totalPrice = document.querySelector(".cart-price");
+  //const checkoutTotal = document.querySelector("#orderTotal");
 
   if (!cartItem || cartItem.length === 0) {
     totalElement.classList.add("total-hidden");
@@ -49,6 +50,7 @@ function cartTotal() {
 
     totalElement.textContent = "Quantity: " + totalItems;
     totalPrice.textContent = "Price: $" + totalCartPrice.toFixed(2); // Display total price with 2 decimal places
+    //checkoutTotal.textContent = 
   }
 }
 
