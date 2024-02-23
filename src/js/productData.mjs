@@ -24,6 +24,7 @@ function convertToJson(res) {
 
 // Fetches data for a specified category
 export async function getData(category) {
+  console.log(baseURL);
   const response = await fetch(baseURL + `products/search/${category}`);
   const data = await convertToJson(response);
   return data.Result;
@@ -32,6 +33,14 @@ export async function getData(category) {
   // const url = `../json/${category}.json`;
   // return fetchJson(url);
 }
+
+// export async function getAllProductData() {
+//     const response = await fetch(baseURL + `products/search/f`);
+//     console.log(response);
+//     const data = await convertToJson(response);
+//     console.log(data);
+//     return data.Result;
+// }
 
 // Finds a product by its ID
 // by putting default category, this allows for overriding when new categories are being used

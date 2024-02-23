@@ -461,9 +461,51 @@ button__quantity {
   display: none;
 }
 
-/* Home Page Product Categories */
+/* Home Page Product Categories START */
 
 .categories {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 5px;
+  margin: auto auto;
 }
+
+.product__category a {
+  text-decoration: none;
+}
+
+.product__category p {
+  background-color: var(--light-grey);
+  color: black;
+  text-align: center;
+  font-weight: 700;
+  font-size: larger;
+}
+
+.product__category img {
+  background-color: var(--secondary-color);
+  border-radius: 10%;
+}
+
+/* Home Page Product Categories END */
+
+/* SEARCH CSS START */
+
+.search__container {
+  display: flex;
+  flex-direction: column;
+  align-content: baseline;
+}
+
+.search__form {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.search__button {
+  padding: 5px;
+}
+
+/* SEARCH CSS END */
