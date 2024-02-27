@@ -13,12 +13,18 @@ async function fetchJson(url) {
 
 /* This function takes a response object (res) as input.
 It checks if the response is "ok" (i.e., the status code is in the range 200-299). If so, it returns the JSON representation of the response body using the res.json() method.
-If the response is not "ok", it throws an Error with the message "Bad Response". */
-function convertToJson(res) {
-  if (res.ok) {
-    return res.json();
-  } else {
-    throw new Error("Bad Response");
+If the response is not "ok", it throws an Error with the message "Bad Response". 
+Team 7 (2) - added try/catch and better error messaging*/
+export async function convertToJson(res) {
+  try {
+    if (res.ok) {
+      return await res.json();
+    } else {
+      const jsonResponse = await res.json();
+      throw { name: "servicesError", message: jsonResponse };
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
   }
 }
 

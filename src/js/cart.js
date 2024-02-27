@@ -1,7 +1,6 @@
 //this file is all about displaying contents of LocalStorage, ie. whats already been added to our cart
 
-import { getLocalStorage, setClick, qs, loadHeaderFooter } from "./utils.mjs";
-import productDetails from "./productDetails.mjs";
+import { loadHeaderFooter } from "./utils.mjs";
 import {
   setCartSuperscriptHTML,
   adjustAddCartSuperscript,

@@ -8,8 +8,7 @@
 
     <title>Sleep Outside | Checkout</title>
 
-    <link rel="stylesheet" href="../css/style.css"/>
-
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
@@ -51,7 +50,8 @@
             <ul>
               <li>
                 <label for="cartTotal"
-                  >Item Subtotal(<span id="num-items"></span>)</label>
+                  >Item Subtotal(<span id="num-items"></span>)</label
+                >
                 <p name="cartTotal" id="cartTotal"></p>
               </li>
               <li>
@@ -71,10 +71,23 @@
 
           <button id="checkoutSubmit" type="submit">Checkout</button>
         </form>
-      
       </section>
     </main>
     <script src="../js/checkout.js" type="module"></script>
+    <script>
+      // Prepopulate form fields for testing
+      window.onload = function() {
+        document.forms["checkout"]["fname"].value = 'John';
+        document.forms["checkout"]["lname"].value = 'Doe';
+        document.forms["checkout"]["street"].value = '123 Main St';
+        document.forms["checkout"]["city"].value = 'Anytown';
+        document.forms["checkout"]["state"].value = 'CA';
+        document.forms["checkout"]["zip"].value = '12345';
+        document.forms["checkout"]["cardNumber"].value = '1234123412341234';
+        document.forms["checkout"]["expiration"].value = '12/25';
+        document.forms["checkout"]["code"].value = '123';
+      };
+      </script>
     <footer id="footer__primary">
       <!-- &copy;NOT a real business -->
     </footer>

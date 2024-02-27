@@ -128,8 +128,8 @@ button {
   fill: gray;
 }
 
-.cart-footer{
-  background-color:rgba(128, 128, 128, 0.2);
+.cart-footer {
+  background-color: rgba(128, 128, 128, 0.2);
   padding: 5px;
   margin-bottom: 20px;
 }
@@ -137,29 +137,30 @@ button {
 .cart-footer * {
   font-weight: 900;
   font-size: 125%;
- 
 }
 
 .checkout-button {
   background-color: black; /* Gray background */
-    color: white; /* Black text */
-    font-weight: 900;
-    padding: 10px 20px; /* Adjust padding as needed */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    cursor: pointer; /* Change cursor on hover */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-    text-decoration: none;
-    margin-bottom: 5px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow */
+  color: white; /* Black text */
+  font-weight: 900;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  transition:
+    background-color 0.3s,
+    color 0.3s; /* Smooth transition */
+  text-decoration: none;
+  margin-bottom: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow */
 }
-  /*text-decoration: none;
+/*text-decoration: none;
   text-align: center;
   background-color: var(--tertiary-color);
   padding: 10px;
   border-radius: 5px;
   color: black;*/
-  
+
 /* } */
 .checkout-container {
   margin: auto auto;
@@ -175,7 +176,6 @@ button {
   max-width: 600px;
   margin: auto;
 }
-
 
 .product-list {
   display: flex;
@@ -504,7 +504,6 @@ button__quantity {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-
 
 /* CHECKOUT FORM CSS START */
 .checkout-form {
