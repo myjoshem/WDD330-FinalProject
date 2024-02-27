@@ -1,4 +1,4 @@
-import { getData } from "./productData.mjs";
+import { getProductsByCategory } from "./productData.mjs";
 import { qs, renderListWithTemplate } from "./utils.mjs";
 import { productCardTemplate } from "./productList.mjs";
 
@@ -6,10 +6,10 @@ export default async function searchProductList(selector, search) {
   // get the element we will insert the list into from the selector
   const element = qs(selector);
   // get the list of products
-  const tentsDataJson = await getData("tents");
-  const hammocksDataJson = await getData("hammocks");
-  const backpacksDataJson = await getData("backpacks");
-  const sleepingBagsDataJson = await getData("sleeping-bags");
+  const tentsDataJson = await getProductsByCategory("tents");
+  const hammocksDataJson = await getProductsByCategory("hammocks");
+  const backpacksDataJson = await getProductsByCategory("backpacks");
+  const sleepingBagsDataJson = await getProductsByCategory("sleeping-bags");
   const jsonArray = [
     ...tentsDataJson,
     ...hammocksDataJson,
