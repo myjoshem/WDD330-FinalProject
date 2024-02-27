@@ -22,7 +22,7 @@ function removeExtraProducts(jsonData) {
 }
 
 // productList.mjs
-function productCardTemplate(item) {
+export function productCardTemplate(item) {
   return `<li class="product-card">
     <a href="../product_pages/index.html?product=${item.Id}">
     <img src="${item.Images.PrimaryMedium}" alt="${item.Name}" />

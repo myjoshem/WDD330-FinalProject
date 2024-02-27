@@ -1,9 +1,9 @@
-import productList from "./productList.mjs";
 import { setCartSuperscriptHTML } from "./productDetails.mjs";
 import { getParam, loadHeaderFooter } from "./utils.mjs";
+import searchProductList from "./search.mjs";
 
-let category = getParam("category");
+let userQuery = getParam("q");
 
 loadHeaderFooter();
-productList(".product-list", category);
+searchProductList(".product-list", userQuery);
 setTimeout(() => setCartSuperscriptHTML(), 100);
