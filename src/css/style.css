@@ -140,27 +140,19 @@ button {
 }
 
 .checkout-button {
-  background-color: black;
-  /* Gray background */
-  color: white;
-  /* Black text */
+  background-color: black; /* Gray background */
+  color: white; /* Black text */
   font-weight: 900;
-  padding: 10px 20px;
-  /* Adjust padding as needed */
-  border: none;
-  /* Remove border */
-  border-radius: 5px;
-  /* Add border radius for rounded corners */
-  cursor: pointer;
-  /* Change cursor on hover */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Change cursor on hover */
   transition:
     background-color 0.3s,
-    color 0.3s;
-  /* Smooth transition */
+    color 0.3s; /* Smooth transition */
   text-decoration: none;
   margin-bottom: 5px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  /* Shadow */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow */
 }
 
 /*text-decoration: none;
@@ -551,6 +543,7 @@ input[type="submit"] {
   margin-top: 20px;
 }
 
+
 /* CHECKOUT FORM CSS END */
 
 .product__category a {
@@ -592,3 +585,4 @@ input[type="submit"] {
 }
 
 /* SEARCH CSS END */
+
