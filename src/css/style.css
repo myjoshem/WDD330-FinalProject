@@ -201,6 +201,8 @@ button {
   padding: 0.5em;
   border: 1px solid var(--light-grey);
   max-width: 250px;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card h2,
@@ -586,3 +588,46 @@ input[type="submit"] {
 
 /* SEARCH CSS END */
 
+/* MODAL CSS START */
+
+.modal__symbol{
+    border-radius: 50%;
+    background-color: gray;
+    display: block;
+    width: 40px;
+    height: 40px;
+    align-self: end;
+}
+
+.product-list__modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  display: grid;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal__hidden {
+  display: none;
+}
+.modal__top__row{
+    display: flex;
+    justify-content: space-between;
+}
+.modal__exit{
+    background-color: gray;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 2px;
+    align-self: center;
+    font-size: 30px;
+}
+
+/* MODAL CSS END */
