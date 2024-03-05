@@ -545,7 +545,6 @@ input[type="submit"] {
   margin-top: 20px;
 }
 
-
 /* CHECKOUT FORM CSS END */
 
 .product__category a {
@@ -590,13 +589,13 @@ input[type="submit"] {
 
 /* MODAL CSS START */
 
-.modal__symbol{
-    border-radius: 50%;
-    background-color: gray;
-    display: block;
-    width: 40px;
-    height: 40px;
-    align-self: end;
+.modal__symbol {
+  border-radius: 50%;
+  background-color: gray;
+  display: block;
+  width: 40px;
+  height: 40px;
+  align-self: end;
 }
 
 .product-list__modal {
@@ -615,19 +614,19 @@ input[type="submit"] {
 .modal__hidden {
   display: none;
 }
-.modal__top__row{
-    display: flex;
-    justify-content: space-between;
+.modal__top__row {
+  display: flex;
+  justify-content: space-between;
 }
-.modal__exit{
-    background-color: gray;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    padding-top: 2px;
-    align-self: center;
-    font-size: 30px;
+.modal__exit {
+  background-color: gray;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding-top: 2px;
+  align-self: center;
+  font-size: 30px;
 }
 
 /* MODAL CSS END */
