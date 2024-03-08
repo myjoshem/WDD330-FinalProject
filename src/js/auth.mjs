@@ -1,6 +1,6 @@
 import { loginRequest } from "./externalServices.mjs";
-import { alertMessage, getLocalStorage, setLocalStorage } from "./utils.mjs";
-import jwt_decode from "jwt-decode";
+import { alertMessage, setLocalStorage } from "./utils.mjs";
+import { jwt_decode } from "jwt-decode";
 
 const tokenKey = "so-token";
 
@@ -52,6 +52,7 @@ export async function login(creds, redirect = "/") {
     setLocalStorage(tokenKey, token);
     window.location = redirect;
   } catch (err) {
+    //! Replace with alert module
     alertMessage(err.message.message);
   }
 }
