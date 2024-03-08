@@ -1,9 +1,10 @@
 import productList, { modalListenerSetUp } from "./productList.mjs";
 import { setCartSuperscriptHTML } from "./productDetails.mjs";
-import { getParam, loadHeaderFooter, qs } from "./utils.mjs";
+import { getParam, loadHeaderFooter } from "./utils.mjs";
 
 let category = getParam("category");
 let button = qs("#sort__button");
+
 
 setUpProductListPage();
 async function setUpProductListPage() {

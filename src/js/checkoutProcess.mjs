@@ -94,6 +94,7 @@ function packageItems(items) {
 /* Write function that uses paramaters (json, res) see line 162-173 inside checkout: function. ...from the end of the checkoutProcess function, and call it inside the checkoutProcess function to display on Success.html page*/
 
 
+
 // Define Checkout Process Object
 const checkoutProcess = {
   key: "",
