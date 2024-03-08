@@ -67,6 +67,7 @@ export async function findProductById(id) {
   }
 }
 
+
 // Sends chechout data to server
 export async function checkout(payload) {
   const options = {

@@ -1,6 +1,7 @@
 import { loginRequest, getOrders} from "./externalServices.mjs";
 import { alertMessage } from "./utils.mjs";
 
+
 export default class Admin {
     constructor(outputSelector) {
         this.mainElement = document.querySelector(outputSelector);

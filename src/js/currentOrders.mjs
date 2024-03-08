@@ -10,6 +10,7 @@ export default async function currentOrders(selector, token) {
   }
 }
 
+
 function orderTemplate(order) {
   return `<tr><td>${order.id}</td>
   <td>${new Date(order.orderDate).toLocaleDateString("en-US")}</td>

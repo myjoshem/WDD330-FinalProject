@@ -9,6 +9,7 @@ import {
 } from "./productDetails.mjs";
 import shoppingCart from "./shoppingCart.mjs";
 
+
 loadHeaderFooter();
 shoppingCart();
 setUpCartListeners();
