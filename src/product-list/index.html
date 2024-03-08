@@ -43,6 +43,19 @@
       </div>
     </header>
     <main class="divider">
+      <form id="product__sort__form">
+        <select id="sort__type">
+          <option value=""></option>
+          <option value="name">Alphabetical</option>
+          <option value="price">Price</option>
+        </select>
+        <select id="sort__direction">
+          <option value=""></option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+        <input type="button" value="Sort" id="sort__button" />
+      </form>
       <section class="products">
         <h2>Top Products: <span class="category__name"></span></h2>
         <div class="product-list__modal modal__hidden">
@@ -50,13 +63,15 @@
             <h3 class="productName"></h3>
             <div class="modal__exit">X</div>
           </div>
-          
+
           <h2 class="divider productNameWithoutBrand"></h2>
 
           <img class="divider productImage" src="" alt="" />
 
           <p class="product-card__price productFinalPrice"></p>
-          <p class="product-card__suggested__price productSuggestedRetailPrice"></p>
+          <p
+            class="product-card__suggested__price productSuggestedRetailPrice"
+          ></p>
 
           <p class="product__color productColorName"></p>
 
