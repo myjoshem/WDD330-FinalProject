@@ -24,7 +24,6 @@ document.forms["checkout"].addEventListener("submit", (e) => {
     console.log(chk_status);
     checkoutProcess.checkout(e.target);
 
-    
     // Redirect to success.html
     window.location.href = "success.html";
     //retrieve data from the checkoutProcess ('json' object with form data, 'res' has order confirmation and id)

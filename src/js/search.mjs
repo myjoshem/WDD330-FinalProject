@@ -1,4 +1,4 @@
-import { getProductsByCategory } from "./productData.mjs";
+import { getProductsByCategory } from "./externalServices.mjs";
 import { qs, renderListWithTemplate } from "./utils.mjs";
 import { productCardTemplate } from "./productList.mjs";
 
