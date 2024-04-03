@@ -1,20 +1,40 @@
-# sleepoutside
+# EssentialOilsProject
+WDD 330 Winter Project
+1 Design and build one or more web applications to explore and apply the things
+you have learned thus far.
 
-## Description
+2 As this is the primary work you will do over weeks 10-14, you should plan on spending at least 30 hours on these challenges.  Work with the instructor to manage the scope of your ideas.
 
-Use this as a starting point to complete the WDD 330 team activity: the SleepOutside web application. It scaffolds out a simple web app with Vite support to bundle up our assets.
+3 Once you have settled on an idea or two write it up and submit it here. Because these should be more complex challenges, you should spend more time on this than you may have for the first block to produce a more formal proposal. 
 
-## Prerequisites
+A sample outline might include the following sections:
 
-- You must have Node installed. visit https://byui-cit.github.io/advcss/lesson01/l01-software.html and skip to the Node section for instructions
+    Purpose - To give information on the amazing uses of Essential Oils with the ability to buy them. 
 
-## Setup
+    Audience - People who want to know how to use essential oils and how they are useful. another audience is people want to have a holistic living with out chemicals in there life.
 
-- `npm install`
-- `npm run start` starts up a local server and updates on any JS or CSS/SCSS changes.
+    Data sources -
+    External API -
+l   ocalStorage -
+    local JSON file -
+    etc -
+    Initial Module list
+    Wireframes for each view of your application
+    Colors/Typography/specific Element styling
 
-## Other commands
+    Schedule to provide yourself mile-markers along the way to help you stay on target.
+    week 9 - 
+        schedule mile-markers
+        outline
 
-- `npm run build` to build final files when you are ready to turn in.
-- `npm run lint` to run ESLint against your code to find errors.
-- `npm run format` to run Prettier to automatically format your code.
+    week 10 - 
+        design html- header/footer 
+        design css - colors and typograph
+        local json files of product and  information
+
+    week 11 -
+
+    week 12 - 
+
+    week 13 - 
+
