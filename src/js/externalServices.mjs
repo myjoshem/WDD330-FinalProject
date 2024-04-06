@@ -2,13 +2,14 @@
 
 const baseURL = import.meta.env.VITE_SERVER_URL;
 //VITE_SERVER_URL=http://server-nodejs.cit.byui.edu:3000/
+
 async function convertToJson(res) {
   try {
+    const data = await res.json();
     if (res.ok) {
-      return await res.json();
+      return data;
     } else {
-      const jsonResponse = await res.json();
-      throw new Error(jsonResponse.message || "Bad Response");
+      throw { name: "servicesError", message: data };
     }
   } catch (error) {
     console.error("An error occurred:", error);
@@ -17,28 +18,15 @@ async function convertToJson(res) {
 }
 
 export async function getProductsByCategory(category) {
-  try {
-    const response = await fetch(baseURL + `${category}`);
-    const data = await convertToJson(response);
-    return data.Result;
-  } catch (error) {
-    console.error("Error in getProductsByCategory:", error);
-    throw error;
-  }
+  const response = await fetch(baseURL + `products/search/${category}`);
+  const data = await convertToJson(response);
+  return data.Result;
 }
 
-export async function findProductById(id,category) {
-  try {
-    const product = await fetch(baseURL + `${category}/${id}`);
-    const data = await convertToJson(product);
-    if (!data.Result) {
-      throw new Error(`Product with ID ${id} not found.`);
-    }
-    return data.Result;
-  } catch (error) {
-    console.error("Error in findProductById:", error);
-    throw error;
-  }
+export async function findProductById(id) {
+  const response = await fetch(baseURL + `product/${id}`);
+  const product = await convertToJson(response);
+  return product.Result;
 }
 
 export async function checkout(payload) {
