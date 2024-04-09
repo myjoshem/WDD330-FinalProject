@@ -1,0 +1,88 @@
+{
+  "Result": [
+    {
+      "Id": "989CH",
+      "Category": "tents",
+      "IsClearance": false,
+      "Brand": {
+        "Id": "1440",
+        "Url": "/brand/1440/",
+        "ProductsUrl": "/products?Brand=1440/",
+        "Name": "The North Face",
+        "LogoSrc": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/brands/the-north-face~b~1440~160x100.jpg"
+      },
+      "Name": "The North Face Assault Tent - 3-Person, 3-Season",
+      "NameWithoutBrand": "Assault Tent - 3-Person, 3-Season",
+      "DescriptionHtmlSimple": "<strong><a class=\"glossaryTermLink\" href=\"/closeout~g~3281\" title=\"Closeout: - Closeout indicates an item may be last year's model or color. While closeout items are often offered at discounted prices, the products themselves are always high quality. Closeout items can include anything from shoes, underwear and apparel, to rugs, tents and outdoor equipment. Closeouts are often a high percentage off the retail price.\">Closeout</a></strong>. Get a good night's rest on the trail with The North Face's Assault tent, featuring waterproof DryWall laminate construction with breathable top vents, plenty of hanging tabs and an advanced DAC <a class=\"glossaryTermLink\" href=\"/featherlite~g~1835\" title=\"Featherlite: - Unusually strong aluminum poles used for tents. DAC Featherlite tent poles use a system of three small metal sleeves to give the poles added strength and flex, while keeping them as lightweight as possible. Up to 15% lighter than aluminum poles of comparable strength, Featherlite poles are the strongest joint system built for tents.\">Featherlite</a> NSL pole system in a rugged, single-wall design perfect for high-altitudes camps.",
+      "FinalPrice": 349.99,
+      "ListPrice": 349.99,
+      "SuggestedRetailPrice": 500,
+      "Url": "/product/989ch/",
+      "Images": {
+        "PrimarySmall": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/the-north-face-assault-tent-3-person-3-season-in-summit-gold-asphalt-grey~p~989ch_01~80.jpg",
+        "PrimaryMedium": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/the-north-face-assault-tent-3-person-3-season-in-summit-gold-asphalt-grey~p~989ch_01~160.jpg",
+        "PrimaryLarge": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/the-north-face-assault-tent-3-person-3-season-in-summit-gold-asphalt-grey~p~989ch_01~320.jpg",
+        "PrimaryExtraLarge": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/the-north-face-assault-tent-3-person-3-season-in-summit-gold-asphalt-grey~p~989ch_01~600.jpg",
+        "ExtraImages": [
+          {
+            "Title": "Alternate View",
+            "Src": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/the-north-face-assault-tent-3-person-3-season~a~989ch_2~600.1.jpg"
+          },
+          {
+            "Title": "Alternate View",
+            "Src": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/the-north-face-assault-tent-3-person-3-season~a~989ch_3~600.1.jpg"
+          },
+          {
+            "Title": "Alternate View",
+            "Src": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/the-north-face-assault-tent-3-person-3-season~a~989ch_4~600.1.jpg"
+          }
+        ]
+      },
+      "Colors": [
+        {
+          "ColorCode": "01",
+          "ColorName": "Summit Gold/Asphalt Grey",
+          "ColorChipImageSrc": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/colorchip/989ch-01.jpg",
+          "ColorPreviewImageSrc": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/the-north-face-assault-tent-3-person-3-season-in-summit-gold-asphalt-grey~p~989ch_01~160.jpg"
+        }
+      ],
+      "Reviews": {
+        "ReviewsUrl": "/reviewsbyproduct/989ch/",
+        "ReviewCount": 0,
+        "AverageRating": 0
+      },
+      "SizesAvailable": {}
+    },
+    {
+      "Id": "880RT",
+      "Category": "tents",
+      "IsClearance": false,
+      "Brand": {
+        "Id": "1308",
+        "Url": "/brand/1308/",
+        "ProductsUrl": "/products?Brand=1308/",
+        "Name": "Marmot"
+      },
+      "Name": "Marmot Ajax Tent - 2-Person, 3-Season",
+      "NameWithoutBrand": "Ajax Tent - 2-Person, 3-Season",
+      "DescriptionHtmlSimple": "<strong>Excess</strong>. Get out and enjoy nature with Marmot's Ajax tent, featuring a smart design with durable, waterproof construction and two doors for easy access.",
+      "FinalPrice": 179.99,
+      "ListPrice": 179.99,
+      "SuggestedRetailPrice": 275,
+      "Url": "/product/880rt/",
+      "Images": {
+        "PrimarySmall": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/marmot-ajax-tent-2-person-3-season-in-pale-pumpkin-terracotta~p~880rt_01~80.jpg",
+        "PrimaryMedium": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/marmot-ajax-tent-2-person-3-season-in-pale-pumpkin-terracotta~p~880rt_01~160.jpg",
+        "PrimaryLarge": "http://server-nodejs.cit.byui.edu:3000/images/sleepoutside/marmot-ajax-tent-2-person-3-season-in-pale-pumpkin-terracotta~p~880rt_01~320.jpg"
+      },
+      "Colors": [],
+      "Reviews": {
+        "ReviewsUrl": "/reviewsbyproduct/880rt/",
+        "ReviewCount": 0,
+        "AverageRating": 0
+      },
+      "SizesAvailable": {}
+    }
+    // Additional objects go here
+  ]
+}

@@ -27,7 +27,7 @@ function removeExtraProducts(jsonData) {
 export function productCardTemplate(item) {
   return `<li class="product-card">
     <div class="modal__symbol" data-id="${item.Id}"></div>
-    <a href="../product_pages/index.html?product=${item.Id}">
+    <a href="../product_pages/index.html?category=${item.Category}&product=${item.Id}#addToCart">
     <img src="${item.Images.PrimaryMedium}" alt="${item.Name}" />
     </a>
     <h3 class="card__brand">${item.Brand.Name} ${item.NameWithoutBrand}</h3>
@@ -103,7 +103,7 @@ const windowClickOut = (e) => {
   let modalContainer = qs(".product-list__modal");
   
   console.log(target);
-  if (target != + modalContainer && !modalContainer.contains(target)) {
+  if (target != +modalContainer && !modalContainer.contains(target)) {
     modalContainer.classList.add("modal__hidden");
   }
   else if (target === qs(".modal__exit")) {

@@ -1,11 +1,11 @@
-import { getLocalStorage, setLocalStorage, setClick, qs } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage, setClick, qs, getParam } from "./utils.mjs";
 import { findProductById } from "./externalServices.mjs";
 
 let product;
 
-export default async function productDetails(productId) {
+export default async function productDetails(productId, category) {
   try {
-    product = await findProductById(productId);
+    product = await findProductById(productId, category);
   } finally {
     if (product == undefined) {
       productNotFound();
@@ -24,6 +24,21 @@ function productNotFound() {
   h2.innerText = "Error: Product Not Found";
   p.innerText =
     "We were unable to find this product. Please check the URL or reach out to a customer service representative. Or consider looking at another one of our other fine products.";
+}
+
+// add to cart button event handler
+async function addToCartHandler(e) {
+  try {
+    const params = getParam();
+    let category = params["category"];
+    const product = await findProductById(e.target.dataset.id, category);
+    //once product retrieved, we pass it to the addProductToCart function
+    addProductToCart(product);
+    window.location.href = "../cart/index.html"
+  } catch (error) {
+    console.error("Error in addToCartHandler:", error);
+  }
+  cartAnimation();
 }
 
 //before we add a product to our cart, we must check if there are already items in the cart. If it is empty, it will create a new array. If it has items, it will check to see if they need to increase the quantity of an existing item or 'add' a new item.
@@ -100,17 +115,6 @@ export function setCartSuperscriptHTML() {
     qs(".superscript").classList.remove("large-cart");
   }
   qs(".superscript").innerHTML = cartQuantity;
-}
-// add to cart button event handler
-async function addToCartHandler(e) {
-  try {
-    const product = await findProductById(e.target.dataset.id);
-    //once product retrieved, we pass it to the addProductToCart function
-    addProductToCart(product);
-  } catch (error) {
-    console.error("Error in addToCartHandler:", error);
-  }
-  cartAnimation();
 }
 
 function cartAnimation() {

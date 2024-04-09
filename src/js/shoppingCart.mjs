@@ -57,7 +57,7 @@ function cartTotal() {
 
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
-      <a href="#" class="cart-card__image">
+      <a href="../product_pages/index.html?category=${item.Category}&product=${item.Id}" class="cart-card__image">
         <img src="${item.Images.PrimarySmall}" alt="${item.Name}" />
       </a>
       <a href="#">
