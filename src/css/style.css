@@ -593,10 +593,15 @@ input[type="submit"] {
   flex-direction: row;
   margin-top: auto;
   margin-bottom: auto;
+  padding: 5px;
+  margin: 5px;
 }
 
 .search__button {
   padding: 5px;
+  margin-left: 5px;
+  margin-top: 0;
+  
 }
 
 /* SEARCH CSS END */
