@@ -2,12 +2,12 @@
   --font-body: Arial, Helvetica, sans-serif;
   --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
   /* colors */
-  --primary-color: #f0a868;
-  --secondary-color: #525b0f;
-  --tertiary-color: #a4b8c4;
-  --light-grey: #d0d0d0;
-  --dark-grey: #303030;
-  --final-price-color: #ff0000;
+  --primary-color: #5a7d7c;
+  --secondary-color: #a0c1d1;
+  --tertiary-color: #dadff7;
+  --light-grey: #b5b2c2;
+  --dark-grey: #232c33;
+  --final-price-color: #e43131;
   /* sizes */
   --font-base: 18px;
   --small-font: 0.8em;
@@ -520,7 +520,7 @@ button__quantity {
 
 .categories {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   column-gap: 5px;
   margin: auto auto;
 }
@@ -565,11 +565,12 @@ input[type="submit"] {
 }
 
 .product__category p {
-  background-color: var(--light-grey);
+
   color: black;
   text-align: center;
   font-weight: 700;
-  font-size: larger;
+  font-size: medium;
+  margin-top: 0rem;
 }
 
 .product__category img {
