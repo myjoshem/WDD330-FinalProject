@@ -67,25 +67,30 @@ header {
 }
 
 .logo--square {
-  font-size: var(--small-font);
-  width: 110px;
-  height: 80px;
+  font-size: var(--medium-font);
+  width: fit-content;
+  height: fit-content;
   flex-direction: column;
   align-items: flex-end;
   box-shadow: 1px 1px 4px var(--light-grey);
   justify-content: center;
   align-items: center;
-  line-height: 1;
+  line-height: 5;
+  padding: .5rem;
 }
 
 .logo--square img {
-  width: 90px;
-  height: 90px;
-  margin-top: -1.3em;
+    max-width: 100%; /* Ensure the image does not exceed its container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra spacing caused by inline elements */
+    margin: 0 auto; /* Center the image horizontally */
 }
 
 .logo--square > div {
   margin-top: -1.7em;
+  height: 50px;
+  max-width: 100%;
+
 }
 
 /* utility classes */
@@ -565,7 +570,6 @@ input[type="submit"] {
 }
 
 .product__category p {
-
   color: black;
   text-align: center;
   font-weight: 700;
@@ -601,7 +605,6 @@ input[type="submit"] {
   padding: 5px;
   margin-left: 5px;
   margin-top: 0;
-  
 }
 
 /* SEARCH CSS END */
