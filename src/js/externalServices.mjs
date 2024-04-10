@@ -4,7 +4,7 @@
 const baseURL = import.meta.env.VITE_SERVER_URL;
 //VITE_SERVER_URL=http://server-nodejs.cit.byui.edu:3000/
 
-/* // Function to save data to a JSON file
+/* // Function to save data to a JSON file, only works locally, not on frontend
 function saveDataToFile(data, filePath) {
   try {
     // Convert the data to JSON string
