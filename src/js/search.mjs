@@ -10,11 +10,13 @@ export default async function searchProductList(selector, search) {
   const hammocksDataJson = await getProductsByCategory("hammocks");
   const backpacksDataJson = await getProductsByCategory("backpacks");
   const sleepingBagsDataJson = await getProductsByCategory("sleeping-bags");
+  const oilsDataJson = await getProductsByCategory("oils");
   const jsonArray = [
     ...tentsDataJson,
     ...hammocksDataJson,
     ...backpacksDataJson,
     ...sleepingBagsDataJson,
+    ...oilsDataJson,
   ];
   // Filter the list to remove extra JSON items
   const filteredDataJson = filterJsonByString(jsonArray, search);

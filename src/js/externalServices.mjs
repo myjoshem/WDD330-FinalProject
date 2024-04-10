@@ -63,7 +63,6 @@ export async function convertToJson(res) {
   }
 }
 
-
 export async function getProductsByCategory(category) {
   const response = await fetch(baseURL + `${category}`);
   const data = await convertToJson(response);
@@ -73,25 +72,6 @@ export async function getProductsByCategory(category) {
    
   return data[0].Result;
 }
-
-/* export async function findProductById(category = "hammocks", id) {
-  try {
-    const response = await fetch(baseURL + `${category}`);
-    const product = await convertToJson(response);
-    
-    // Check if product exists and matches the specified ID
-    if (product && product.length > 0 && product[0].Result.Id === id) {
-      // Save the retrieved data to a JSON file
-      // saveDataToFile(product, "productsByID.json");
-      return product[0].Result.Id;
-    } else {
-      throw { name: "servicesError", message: `Product with ID ${id} not found in category ${category}` };
-    }
-  } catch (error) {
-    console.error("An error occurred:", error);
-    throw error;
-  }
-} */
 
 export async function findProductById(id, category) {
   try {
@@ -123,7 +103,6 @@ export async function findProductById(id, category) {
     throw error;
   }
 }
-
 
   export async function checkout(payload) {
     try {
