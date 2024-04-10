@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path fill="#4D9E4D" d="M36,75c-9.925,0-18-8.075-18-18V35h2v22c0,8.822,7.178,16,16,16s16-7.178,16-16V35h2v22C54,66.925,45.925,75,36,75z M36,39 c-7.72,0-14,6.28-14,14v11h28V53C50,45.28,43.72,39,36,39z"/>
+  <path fill="#A5A5A5" d="M36,15c-8.28,0-15,6.72-15,15v12h30V30C51,21.72,44.28,15,36,15z"/>
+  <path fill="#FFFFFF" d="M36,33c-5.514,0-10,4.486-10,10v15h20V43C46,37.486,41.514,33,36,33z"/>
+  <path fill="#DD2E44" d="M36,0C18.326,0,4,14.326,4,32v11h64V32C68,14.326,53.674,0,36,0z M36,6c13.255,0,24,10.745,24,24v6H12v-6 C12,16.745,22.745,6,36,6z"/>
+  <!-- <text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Paul Richard</text><text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text> -->
+</svg>
