@@ -566,7 +566,6 @@ input[type="submit"] {
 }
 
 .product__category p {
-
   color: black;
   text-align: center;
   font-weight: 700;
@@ -602,7 +601,6 @@ input[type="submit"] {
   padding: 5px;
   margin-left: 5px;
   margin-top: 0;
-  
 }
 
 /* SEARCH CSS END */
