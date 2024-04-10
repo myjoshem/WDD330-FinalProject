@@ -3,7 +3,7 @@
   --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
   /* colors */
   --primary-color: #5a7d7c;
-  --secondary-color: #a0c1d1;
+  --secondary-color: #478bae;
   --tertiary-color: #dadff7;
   --light-grey: #b5b2c2;
   --dark-grey: #232c33;
@@ -148,6 +148,7 @@ button {
 .checkout-button {
   background-color: black; /* Gray background */
   color: white; /* Black text */
+  font-size: medium;
   font-weight: 900;
   padding: 10px 20px; /* Adjust padding as needed */
   border: none; /* Remove border */
@@ -157,7 +158,24 @@ button {
     background-color 0.3s,
     color 0.3s; /* Smooth transition */
   text-decoration: none;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow */
+}
+#CSbutton {
+  margin-top: 20px;
+  font-size: medium;
+  background-color: black; /* Gray background */
+  color: white; /* Black text */
+  font-weight: 900;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  transition:
+    background-color 0.3s,
+    color 0.3s; /* Smooth transition */
+  text-decoration: none;
+  margin-bottom: 20px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow */
 }
 
